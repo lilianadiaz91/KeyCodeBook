@@ -46,7 +46,7 @@ exports.update = (req, res) => {
     //findByIdAndUpdate = metodo de mongoose q permite buscar por id y actualizar
     //params es el id q se envia por la url
     // user = constante creada anteriormente para datos nuevos
-    UserModel.findByIdAndUpdate(req.params.id, user)
+    UserModel.findByIdAndUpdate(req.params.id, user, {new: true})
     .then(
         (userUpdate) =>{res.send(userUpdate)}
     )
