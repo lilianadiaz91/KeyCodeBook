@@ -14,6 +14,7 @@ conectDB()// estamos ejecutando el modulo de nuestra cnexion a la BD
 
 require('./routes/user')(app)
 require('./routes/genre')(app)
+require('./routes/book')(app)
 
 app.listen(3000, () =>{
     console.log(`se levanto el servidor`)
