@@ -59,3 +59,23 @@ exports.update = (req, res) => {
     )
 
 }
+// metodo para listar todos los usuarios
+exports.getAll = (req,res) =>{
+    UserModel.find()
+    .then( (users) => { res.send(users)})
+    .catch( (error) => { res.status(500).send({ message: error.message})})
+}
+// metodo para listar un usuario
+exports.getOne = (req,res) =>{
+    UserModel.findById(req.params.id)
+    .then( (user) => { res.send(user)})
+    .catch( (error) => { res.status(500).send({ message: error.message})})
+
+}
+// metodo para eliminar un usuario
+exports.delete = (req,res) =>{
+    UserModel.findByIdAndRemove(req.params.id)
+    .then( (user) => { res.send(user)})
+    .catch( (error) => { res.status(500).send({ message: error.message})})
+
+}
